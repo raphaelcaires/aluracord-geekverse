@@ -20,7 +20,7 @@ function Title(props) {
 }
 
 export default function Home() {
-  const [username, setUsername] = React.useState('raphaelcaires');
+  const [username, setUsername] = React.useState('');
   const route = useRouter();
 
   return (
@@ -71,9 +71,9 @@ export default function Home() {
               onChange={function(event) {
                 console.log('usuário digitou ', event.target.value);
                 /* Onde está o valor? */
-                const valor = event.target.value;
+                const value = event.target.value;
                 /* Troca o valor da variavel através do React e avisa quem precisa */
-                setUsername(valor);
+                setUsername(value);
               }}
               fullWidth
               textFieldColors={{
