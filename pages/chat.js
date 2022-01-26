@@ -1,7 +1,6 @@
 import { Box, Text, TextField, Image, Button } from '@skynexui/components';
 import React from 'react';
 import appConfig from '../config.json';
-import { username } from './index'
 
 export default function ChatPage() {
   const [message, setMessage] = React.useState('');
