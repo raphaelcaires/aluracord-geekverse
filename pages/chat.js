@@ -12,7 +12,7 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 function realTimeMessagesListner(addMessage) {
   return supabaseClient
     .from('messages')
-    .on('INSERT', ({ realTimeMessage }) => {
+    .on('INSERT', (realTimeMessage) => {
       addMessage(realTimeMessage.new);
     })
     .subscribe();
@@ -33,8 +33,8 @@ export default function ChatPage() {
         console.log('Dados da consulta: ', data);
         setMessageList(data);
       });
-    realTimeMessagesListner((newMessage) => {
-      console.log('Nova mensagem: ', newMessage);
+
+    const subscription = realTimeMessagesListner((newMessage) => {
       setMessageList((updatedList) => {
         return [
           newMessage,
@@ -42,6 +42,10 @@ export default function ChatPage() {
         ]
       });
     });
+
+    return () => {
+      subscription.unsubscribe();
+    }
   }, []);
 
   function handleNewMessage(newMessage) {
