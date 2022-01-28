@@ -1,75 +1,92 @@
-import { Box, Button, Text, TextField, Image } from '@skynexui/components';
-import React from 'react';
-import { useRouter } from 'next/router';
-import appConfig from '../config.json';
+import { Box, Button, Text, TextField, Image } from "@skynexui/components";
+import React from "react";
+import { useRouter } from "next/router";
+import appConfig from "../config.json";
 
 function Title(props) {
-  const Tag = props.tag || 'h1';
+  const Tag = props.tag || "h1";
   return (
     <>
       <Tag>{props.children}</Tag>
       <style jsx>{`
-      ${Tag} {
-        color: ${appConfig.theme.colors.neutrals['000']};
-        font-size: 24px;
-        font-weight: 600;
-      }
+        ${Tag} {
+          color: ${appConfig.theme.colors.neutrals["000"]};
+          font-size: 24px;
+          font-weight: 600;
+        }
       `}</style>
     </>
   );
 }
 
 export default function Home() {
-  const [username, setUsername] = React.useState('');
+  const [username, setUsername] = React.useState("raphaelcaires");
   const route = useRouter();
 
   return (
     <>
       <Box
         styleSheet={{
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           backgroundColor: appConfig.theme.colors.primary[100],
-          backgroundImage: 'url(https://i.redd.it/ry6jrz9zs3k71.png)',
-          backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
+          backgroundImage: "url(https://i.redd.it/ry6jrz9zs3k71.png)",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundBlendMode: "multiply",
         }}
       >
         <Box
           styleSheet={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
             flexDirection: {
-              xs: 'column',
-              sm: 'row',
+              xs: "column",
+              sm: "row",
             },
-            width: '100%', maxWidth: '600px',
-            borderRadius: '5px', padding: '32px', margin: '16px',
-            boxShadow: '0 2px 10px 0 rgb(0 0 0 / 90%)',
+            width: "100%",
+            maxWidth: "600px",
+            borderRadius: "5px",
+            padding: "32px",
+            margin: "16px",
+            boxShadow: "0 2px 10px 0 rgb(0 0 0 / 90%)",
             backgroundColor: appConfig.theme.colors.neutrals[700],
           }}
         >
-
           {/* Formulário */}
           <Box
             as="form"
-            onSubmit={function(eventInfo) {
+            onSubmit={function (eventInfo) {
               eventInfo.preventDefault();
-              route.push('/chat');
+              route.push("/chat");
             }}
             styleSheet={{
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: "100%", sm: "50%" },
+              textAlign: "center",
+              marginBottom: "32px",
             }}
           >
             <Title tag="h2">Bem-vindo de volta!</Title>
-            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
+            <Text
+              variant="body3"
+              styleSheet={{
+                marginBottom: "32px",
+                color: appConfig.theme.colors.neutrals[300],
+              }}
+            >
               {appConfig.name}
             </Text>
 
             <TextField
               value={username}
-              onChange={function(event) {
-                console.log('usuário digitou ', event.target.value);
+              onChange={function (event) {
+                console.log("usuário digitou ", event.target.value);
                 /* Onde está o valor? */
                 const value = event.target.value;
                 /* Troca o valor da variavel através do React e avisa quem precisa */
@@ -85,10 +102,9 @@ export default function Home() {
                 },
               }}
             />
-
             <Button
-              type='submit'
-              label='Entrar'
+              type="submit"
+              label="Entrar"
               fullWidth
               buttonColors={{
                 contrastColor: appConfig.theme.colors.neutrals["000"],
@@ -100,27 +116,26 @@ export default function Home() {
           </Box>
           {/* Formulário */}
 
-
           {/* Photo Area */}
           <Box
             styleSheet={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              maxWidth: '200px',
-              padding: '16px',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              maxWidth: "200px",
+              padding: "16px",
               backgroundColor: appConfig.theme.colors.neutrals[800],
-              border: '1px solid',
+              border: "1px solid",
               borderColor: appConfig.theme.colors.neutrals[999],
-              borderRadius: '10px',
+              borderRadius: "10px",
               flex: 1,
-              minHeight: '230px',
+              minHeight: "230px",
             }}
           >
             <Image
               styleSheet={{
-                borderRadius: '50%',
-                marginBottom: '16px',
+                borderRadius: "50%",
+                marginBottom: "16px",
               }}
               src={`https://github.com/${username}.png`}
             />
@@ -129,8 +144,8 @@ export default function Home() {
               styleSheet={{
                 color: appConfig.theme.colors.neutrals[200],
                 backgroundColor: appConfig.theme.colors.neutrals[900],
-                padding: '3px 10px',
-                borderRadius: '1000px'
+                padding: "3px 10px",
+                borderRadius: "1000px",
               }}
             >
               {username}

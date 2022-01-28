@@ -1,21 +1,47 @@
 import { Box, Text, TextField, Image, Button } from '@skynexui/components';
 import React from 'react';
 import appConfig from '../config.json';
+import { createClient } from '@supabase/supabase-js';
+
+const SUPABASE_URL = 'https://dtxiyouqliftvyqebant.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzMwMzkwOCwiZXhwIjoxOTU4ODc5OTA4fQ.iIdVTdxGnDpF2yWqDM2-lhAoYhfQbSq2qeWzXY9MVTo';
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+
 
 export default function ChatPage() {
   const [message, setMessage] = React.useState('');
   const [messageList, setMessageList] = React.useState([]);
 
+  React.useEffect(() => {
+    supabaseClient
+      .from('messages')
+      .select('*')
+      .order('id', { ascending: false })
+      .then(({ data }) => {
+        console.log('Dados da consulta: ', data);
+        setMessageList(data);
+      });
+  }, []);
+
   function handleNewMessage(newMessage) {
     const message = {
-      id: messageList.length + 1,
+      /* id: messageList.length + 1, */
       from: 'raphaelcaires',
       text: newMessage,
     };
-    setMessageList([
-      message,
-      ...messageList,
-    ]);
+
+    supabaseClient
+      .from('messages')
+      .insert([
+        message
+      ])
+      .then(({ data }) => {
+        setMessageList([
+          data[0],
+          ...messageList,
+        ]);
+      });
     setMessage('');
   }
 
@@ -101,6 +127,26 @@ export default function ChatPage() {
                 color: appConfig.theme.colors.neutrals[200],
               }}
             />
+             <Button
+                styleSheet={{
+                  minWidth: "60px",
+                  minHeight: "20px",
+                  borderRadius: "5px",
+                  marginBottom: "8px",
+                }}
+                onClick={(event) => {
+                  event.preventDefault();
+                  handleNewMessage(message);
+                }} 
+                type="submit"
+                label="Enviar"
+                buttonColors={{
+                contrastColor: appConfig.theme.colors.neutrals["000"],
+                mainColor: appConfig.theme.colors.primary[500],
+                mainColorLight: appConfig.theme.colors.primary[400],
+                mainColorStrong: appConfig.theme.colors.primary[600],
+                }}
+              />
           </Box>
         </Box>
       </Box>
@@ -138,7 +184,7 @@ function MessageList(props) {
     <Box
       tag="ul"
       styleSheet={{
-        overflow: "scroll",
+        overflow: "auto",
         display: "flex",
         flexDirection: "column-reverse",
         flex: 1,
@@ -173,7 +219,7 @@ function MessageList(props) {
                   display: "inline-block",
                   marginRight: "8px",
                 }}
-                src={`https://github.com/raphaelcaires.png`}
+                src={`https://github.com/${message.from}.png`}
               />
               <Text tag="strong">
                 {message.from}
