@@ -60,7 +60,7 @@ export default function Home() {
             as="form"
             onSubmit={function (eventInfo) {
               eventInfo.preventDefault();
-              route.push("/chat");
+              route.push(`/chat?username=${username}`);
             }}
             styleSheet={{
               display: "flex",
