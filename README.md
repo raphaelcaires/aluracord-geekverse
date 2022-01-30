@@ -3,7 +3,7 @@
 `O projeto GeekVerse é um aplicativo de troca de mensagens e foi desenvolvido com ReactJS/NextJS na Imersão React Alura em janeiro de 2022. Utilizei tecnologias como Next.js, package.json, React components, CSS in JS, styled-jsx. Usei o Supabase.io como back-end da aplicação e fiz o deploy na Vercel. Se você gostou desse projeto, dê uma ⭐ e compartilhe!`
 
 
-<img width="1000px" src="./src/img/geekverse.png"/>
+<img width="1000px" src="./src/img/geekverse.gif"/>
 
 ## Tecnologias Utilizadas
  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://pt-br.reactjs.org/)
