@@ -1,6 +1,6 @@
 # Aluracord GeekVerse
 ## Projeto desenvolvido no evento de imersão React da Alura.
-`O projeto é um aplicativo de troca de mensagens e foi desenvolvido com ReactJS/NextJS na Imersão React Alura em janeiro de 2022. Utilizei tecnologias como Next.js, package.json, React components , CSS in JS, styled-jsx. Usei o Supabase.io como back-end da aplicação e fiz o deploy na Vercel. Se você gostou desse projeto, dê uma ⭐ e compartilhe!`
+`O projeto GeekVerse é um aplicativo de troca de mensagens e foi desenvolvido com ReactJS/NextJS na Imersão React Alura em janeiro de 2022. Utilizei tecnologias como Next.js, package.json, React components, CSS in JS, styled-jsx. Usei o Supabase.io como back-end da aplicação e fiz o deploy na Vercel. Se você gostou desse projeto, dê uma ⭐ e compartilhe!`
 
 
 <img width="1000px" src="./src/img/geekverse.png"/>
@@ -24,7 +24,7 @@ Para executar o projeto você precisa ter o [Node.js](https://nodejs.dev) e o [G
 1. Clone esse repositório.
 
 ```
-git clone https://github.com/isaaacwillian/aluracord-lightning.git
+git clone https://github.com/raphaelcaires/aluracord-geekverse.git
 ```
 
 2. Acesse a pasta do projeto.
@@ -41,7 +41,9 @@ npm install
 npm run dev
 ```
 
+## Link para aplicação
 
+Você também pode experimentar a aplicação pelo link do <a href="https://aluracord-geekverse.vercel.app/">GeekVerse</a>.
 
 
 #
