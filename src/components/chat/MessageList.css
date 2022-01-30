@@ -1,0 +1,25 @@
+.loader {
+  border: 8px solid #29333D;
+  border-top: 8px solid #169384;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #169384;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar{
+  background-color: #29333D;
+  width: 10px;
+  border-radius: 10px;
+}
