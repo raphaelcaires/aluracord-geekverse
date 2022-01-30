@@ -43,7 +43,7 @@ npm run dev
 
 ## Link para aplicação
 
-Você também pode experimentar a aplicação pelo link do <a href="https://aluracord-geekverse.vercel.app/">GeekVerse</a>.
+Você também pode conferir como ficou a aplicação pelo link do <a href="https://aluracord-geekverse.vercel.app/">GeekVerse</a>.
 
 
 #
