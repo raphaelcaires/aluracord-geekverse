@@ -1,6 +1,6 @@
 # Aluracord GeekVerse
 ## Projeto desenvolvido no evento de imersão React da Alura.
-`O projeto é um aplicativo de troca de mensagens e foi desenvolvido com ReactJS/NextJS. Se você gostou desse projeto, dê uma ⭐ e compartilhe!`
+`O projeto é um aplicativo de troca de mensagens e foi desenvolvido com ReactJS/NextJS na Imersão React Alura em janeiro de 2022. Utilizei tecnologias como Next.js, package.json, React components , CSS in JS, styled-jsx. Usei o Supabase.io como back-end da aplicação e fiz o deploy na Vercel. Se você gostou desse projeto, dê uma ⭐ e compartilhe!`
 
 
 <img width="1000px" src="./src/img/geekverse.png"/>
