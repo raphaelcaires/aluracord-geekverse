@@ -15,7 +15,7 @@
 ![](https://img.shields.io/badge/npm-v.8.1.0-blue)
 ![](https://img.shields.io/github/stars/raphaelcaires/aluracord-geekverse.svg)
 ![](https://img.shields.io/github/commit-activity/w/raphaelcaires/aluracord-geekverse.svg)
-![](https://img.shields.io/badge/license-MIT-blue)
+[![](https://img.shields.io/badge/license-MIT-blue)](https://github.com/raphaelcaires/aluracord-geekverse/blob/main/LICENSE)
 
 ## Como executar o projeto
 
