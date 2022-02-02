@@ -12,46 +12,47 @@ export default function Header() {
     <>
       <Box 
         styleSheet={{
-        width: '100%',
-        marginBottom: '16px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-        }} >
-        <Box>
+          height: '8vh',
+          width: '100%',
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+        }}>
           
-        <Image
-          styleSheet={{
-            width: '40px',
-            height: '40px',
-            borderRadius: '50%',
-            display: 'inline-block',
-            marginRight: '8px',
-          }}
-          src={infoGit.id ? `https://github.com/${user}.png` : imgGitHub.src}
-        />
-        <Text variant='heading5'>
-          Olá, {infoGit.name}!
-        </Text>
+        <Box styleSheet={{display: 'flex', alignItems: 'center'}} title='Seu perfil'>
+          <Image
+            styleSheet={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              marginRight: "16px",
+              marginTop: '-10px',
+            }}
+            src={infoGit.id ? `https://github.com/${user}.png` : imgGitHub.src}
+          />
+          <Text variant='heading5' styleSheet={{marginTop: '-10px',}}>
+            Olá, {infoGit.name}!
+          </Text>
         </Box>
-        <Text variant='heading3' styleSheet={{marginRight: "150px", Bottom: "10px"}}>
-          Chat
-        </Text>
-        <Button
-          buttonColors={{
-            contrastColor: '#FFFFFF',
-            mainColor: '#c21e47',
-            mainColorLight: '#d4214e',
-            mainColorStrong: '#af1b3f',
-          }}
-          label='Logout'
-          onClick={() => {
-            setUser('')
-            setInfoGit({ name: 'Usuário', status: true }
-            )
-          }}
-          href="/"
-        />
+
+        <Box styleSheet={{marginTop: '-10px',}}>
+          <Button
+            buttonColors={{
+              contrastColor: '#FFFFFF',
+              mainColor: '#c21e47',
+              mainColorLight: '#d4214e',
+              mainColorStrong: '#af1b3f',
+            }}
+            label='Sair'
+            onClick={() => {
+              setUser('')
+              setInfoGit({ name: 'Usuário', status: true }
+              )
+            }}
+            href="/"
+          />
+        </Box>
+
       </Box>
     </>
   )

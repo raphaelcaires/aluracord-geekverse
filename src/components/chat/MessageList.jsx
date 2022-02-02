@@ -1,4 +1,4 @@
-import { Box, Text, Image, Button } from "@skynexui/components";
+import { Box, Text, Image, Icon } from "@skynexui/components";
 import { AuthContext } from "../providers/auth";
 import { useContext, useState } from "react";
 import appConfig from "../../../config.json";
@@ -25,7 +25,8 @@ export default function MessageList({ messageList, messageDelete }) {
           flexDirection: "column-reverse",
           flex: 1,
           color: appConfig.theme.colors.neutrals["000"],
-          marginBottom: "16px",
+          maxWidth: "100%",
+          padding: "0px 8px",
         }}
       >
         {messageList.map((message) => {
@@ -35,9 +36,8 @@ export default function MessageList({ messageList, messageDelete }) {
               tag="li"
               styleSheet={{
                 borderRadius: "5px",
-                padding: "6px",
-                marginBottom: "12px",
-                marginRight: "5px",
+                width: '100%',
+                padding: "16px",
                 hover: {
                   backgroundColor: appConfig.theme.colors.neutrals[700],
                 },
@@ -45,7 +45,7 @@ export default function MessageList({ messageList, messageDelete }) {
             >
               <Box
                 styleSheet={{
-                  marginBottom: "8px",
+                  marginBottom: "10px",
                   display: "flex",
                   justifyContent: "space-between",
                 }}
@@ -53,8 +53,8 @@ export default function MessageList({ messageList, messageDelete }) {
                 <Box>
                   <Image
                     styleSheet={{
-                      width: "20px",
-                      height: "20px",
+                      width: "25px",
+                      height: "25px",
                       borderRadius: "50%",
                       display: "inline-block",
                       marginRight: "8px",
@@ -75,17 +75,20 @@ export default function MessageList({ messageList, messageDelete }) {
                 </Box>
                 <Box>
                   {infoGit.login === message.login && (
-                    <Button
-                      label="Excluir"
-                      iconName="trash"
-                      buttonColors={{
-                        contrastColor: appConfig.theme.colors.neutrals["000"],
-                        mainColor: "#29333D",
-                        mainColorLight: "#181F25",
-                        mainColorStrong: "#af1b3f",
+                    <Icon
+                      name={"FaTrashAlt"}
+                      styleSheet={{
+                        marginLeft: "auto",
+                        marginRight: ".2rem",
+                        marginTop: ".1rem",
+                        cursor: "pointer",
+                        transition: ".4s ease all",
+                        hover: {
+                          color: "#d4214e",
+                        },
                       }}
                       onClick={() => messageDelete(message.id)}
-                    />)
+                    ></Icon>)
                   }
                 </Box>
               </Box>
@@ -94,8 +97,9 @@ export default function MessageList({ messageList, messageDelete }) {
                 <Image
                   src={message.text.replace(":sticker:", "")}
                   styleSheet={{
-                    width: "100px",
-                    height: "100px",
+                    width: "90px",
+                    height: "90px",
+                    marginLeft: "8px",
                   }}
                 /> ) : ( message.text)
               }

@@ -89,9 +89,12 @@ export default function ChatPage() {
             borderRadius: "5px",
             backgroundColor: appConfig.theme.colors.neutrals[700],
             height: "100%",
-            maxWidth: "95%",
-            maxHeight: "95vh",
-            padding: "32px",
+            maxWidth: "80%",
+            maxHeight: "85vh",
+            minWidth: "90%",
+            minHeight: "90vh",
+            padding: "30px",
+            boxShadow: "0 2px 10px 0 rgb(0 0 0 / 90%)",
           }}
         >
           <Header />
@@ -100,7 +103,10 @@ export default function ChatPage() {
               position: "relative",
               display: "flex",
               flex: 1,
-              height: "80%",
+              height: "90%",
+              maxWidth: "100%",
+              maxHeight: "90vh",
+              minHeight: "70vh",
               backgroundColor: appConfig.theme.colors.neutrals[600],
               flexDirection: "column",
               borderRadius: "5px",
@@ -115,7 +121,7 @@ export default function ChatPage() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                  padding: "0 5px",
+                padding: "0px 8px",
               }}
             >
               <TextField
@@ -137,9 +143,8 @@ export default function ChatPage() {
                   resize: "none",
                   borderRadius: "5px",
                   padding: "6px 8px",
-                  backgroundColor: appConfig.theme.colors.neutrals[800],
-                  marginRight: '4px',
                   marginTop: '10px',
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
                   color: appConfig.theme.colors.neutrals[200],
                 }}
               />

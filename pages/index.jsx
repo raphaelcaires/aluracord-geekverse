@@ -21,7 +21,7 @@ export default function Home() {
       } else {
         setInfoGit(resp);
         setTimeout(() => {
-          router.push(`/Chat`)
+          router.push(`/chat_page`)
         }, 700);
       }
     });
@@ -63,7 +63,7 @@ export default function Home() {
             as="form"
             onSubmit={function (eventInfo) {
               eventInfo.preventDefault();
-              route.push(`/chat?username=${username}`);
+              route.push(`/chat_page?username=${username}`);
             }}
             styleSheet={{
               display: "flex",
@@ -152,7 +152,7 @@ export default function Home() {
           >
             <Image
               styleSheet={{
-                borderRadius: "50%",
+                borderRadius: "100%",
                 marginBottom: "16px",
                 width: '166px',
                 height: '166px',
@@ -165,7 +165,7 @@ export default function Home() {
                 color: appConfig.theme.colors.neutrals[200],
                 backgroundColor: appConfig.theme.colors.neutrals[900],
                 padding: "3px 10px",
-                borderRadius: "1000px",
+                borderRadius: "12px",
               }}
             >
               {infoGit.name ? infoGit.name : 'Desculpe, não encontrado!'}
