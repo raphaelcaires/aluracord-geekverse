@@ -1,32 +1,27 @@
 import { Box, TextField, Button } from '@skynexui/components';
 import { ButtonSendSticker } from '../src/components/chat/ButtonSendSticker';
+import { AuthContext } from '../src/components/providers/auth';
 import { useContext, useState, useEffect } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import { supabaseClient } from '../client';
 import imgBackground from '../src/img/background.png';
 import appConfig from '../config.json';
 import React from 'react';
 import Header from '../src/components/chat/Header';
 import MessageList from '../src/components/chat/MessageList';
 import dateNow from '../src/components/chat/DateNow';
-import { AuthContext } from '../src/components/providers/auth';
 import Title from '../src/components/styles/Title';
 
 
-const SUPABASE_URL = 'https://ghgfhvhjfjtrmfqytdwv.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzQ5MTI3NywiZXhwIjoxOTU5MDY3Mjc3fQ.00PBa-VXwbWgKI7lT0WGi7ftbqjcGIhX8LHP2HhvAD8';
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-function listenMessages(addMessage) {
+function realTimeMessage(addMessage) {
   return supabaseClient
   .from('messages')
   .on('INSERT', (data) => { addMessage(data.new) })
-  .subscribe()
+  .subscribe();
 }
 
 export default function ChatPage() {
   const [message, setMessage] = useState('');
   const [messageList, setMessageList] = useState([]);
-
   const { infoGit } = useContext(AuthContext);
 
   useEffect(() => {
@@ -34,17 +29,12 @@ export default function ChatPage() {
     .from('messages')
     .select('*')
     .order('id', { ascending: false })
-    .then(({ data }) => setMessageList(data))
+    .then(({ data }) => { setMessageList(data)});
     
-    listenMessages((newMessage) => {
-      setMessageList((updatedList) => {
-        return [
-          newMessage,
-          ...updatedList
-        ]
-      });
+    realTimeMessage((newMessage) => {
+      setMessageList((currentList) => [newMessage,...currentList]);
     });
-  }, []);
+  }, [messageList]);
 
   function handleNewMessage(newMessage) {
     const message = {
@@ -54,11 +44,12 @@ export default function ChatPage() {
       login: infoGit.login
     }
 
-    supabaseClient
+    newMessage && (supabaseClient
       .from('messages')
       .insert([message])
-      .then()
-    setMessage('')
+      .then(),
+      setMessage('')
+    );
   }
 
   async function messageDelete(id){
