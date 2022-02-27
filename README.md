@@ -1,6 +1,6 @@
 # Aluracord GeekVerse
 ## Projeto desenvolvido no evento de imersão React da Alura.
-`O projeto GeekVerse é um aplicativo de troca de mensagens e foi desenvolvido com ReactJS/NextJS na Imersão React Alura em janeiro de 2022. Nesse projeto utilizei NextJS, React Components, CSS in JS, Styled-jsx e SkynexUI. Para o back-end da aplicação usei o Supabase e fiz o deploy na Vercel. Se você gostou do projeto dê uma ⭐ no repositório e compartilhe!`
+`O projeto GeekVerse é um aplicativo de troca de mensagens e foi desenvolvido com ReactJS/NextJS na Imersão React Alura em janeiro de 2022. Nesse projeto utilizei NextJS, React Components, CSS-in-JS, Styled-jsx, SkynexUI e Websocket. Para o back-end da aplicação usei o Supabase e fiz o deploy na Vercel. Se você gostou do projeto dê uma ⭐ no repositório e compartilhe!`
 
 
 <img width="1000px" src="./src/img/geekverse.gif"/>
@@ -10,6 +10,7 @@
  [![Nextjs](https://img.shields.io/badge/Nextjs-20232A?style=for-the-badge&logo=next.js&logoColor=61DAFB)](https://nextjs.org/)
  [![Vercel](https://img.shields.io/badge/Vercel-20232A?style=for-the-badge&logo=vercel&logoColor=61DAFB)](https://vercel.com/login?next=%2Fdashboard)
  [![Supabase](https://img.shields.io/badge/Supabase-20232A?style=for-the-badge&logo=supabase&logoColor=61DAFB)](https://supabase.com/)
+ [![Websocket](https://img.shields.io/badge/Websocket-20232A?style=for-the-badge&logo=supabase&logoColor=61DAFB)](https://supabase.com/)
   
 ## Status / Info
 ![](https://img.shields.io/badge/npm-v.8.1.0-blue)
