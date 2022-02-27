@@ -1,6 +1,6 @@
 # Aluracord GeekVerse
 ## Projeto desenvolvido no evento de imersão React da Alura.
-`O projeto GeekVerse é um aplicativo de troca de mensagens e foi desenvolvido com ReactJS/NextJS na Imersão React Alura em janeiro de 2022. Nesse projeto utilizei NextJS, React Components, Yarn, CSS-in-JS, Styled-jsx, SkynexUI, API Rest, NodeJS e Websocket. Para o back-end da aplicação usei o Supabase e fiz o deploy na Vercel. Se você gostou do projeto dê uma ⭐ no repositório e compartilhe!`
+`O projeto GeekVerse é um aplicativo de troca de mensagens e foi desenvolvido com ReactJS/NextJS na Imersão React Alura em janeiro de 2022. Nesse projeto utilizei NextJS, React Components, Yarn, Sass, CSS-in-JS, Styled-jsx, SkynexUI, API Rest, NodeJS e Websocket. Para o back-end da aplicação usei o Supabase e fiz o deploy na Vercel. Se você gostou do projeto dê uma ⭐ no repositório e compartilhe!`
 
 
 <img width="1000px" src="./src/img/geekverse.gif"/>
@@ -33,13 +33,13 @@ git clone https://github.com/raphaelcaires/aluracord-geekverse.git
 3. Instale as dependências.
 
 ```
-npm install
+yarn install
 ```
 
 4. Execute a aplicação em modo de desenvolvimento.
 
 ```
-npm run dev
+yarn dev
 ```
 
 ## Link para aplicação
